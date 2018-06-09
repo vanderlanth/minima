@@ -1,0 +1,17 @@
+@mixin title
+	text-transform: uppercase
+	letter-spacing: 2.5rem
+	font-size: 1rem
+
+
+@mixin link
+	text-transform: uppercase
+	letter-spacing: 0.2rem
+	font-size: 0.8rem
+	opacity: 0.5
+	padding: 20px
+	text-decoration: none
+	@include transition(.3s ease all)
+	&:hover
+		cursor: pointer
+		opacity: 1

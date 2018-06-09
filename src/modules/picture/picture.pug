@@ -1,0 +1,7 @@
+mixin picture(classes, name, ext, alt)
+	picture(class=classes)
+		source(srcset='images/'+name+'-xl@2x.'+ext+' 2x, images/'+name+'-xl.'+ext+' 1x' media="(min-width: 1160px)")
+		source(srcset='images/'+name+'-l@2x.'+ext+' 2x, images/'+name+'-l.'+ext+' 1x' media="(min-width: 1024px)")
+		source(srcset='images/'+name+'-m@2x.'+ext+' 2x, images/'+name+'-m.'+ext+' 1x' media="(min-width: 768px)")
+		source(srcset='images/'+name+'-s@2x.'+ext+' 2x, images/'+name+'-s.'+ext+' 1x' media="(min-width: 300px)")
+		img(src='images/'+name+'-s.'+ext+'' alt=alt)

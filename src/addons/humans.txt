@@ -1,0 +1,18 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  Name:
+  Site:
+
+# THANKS
+
+  Name:
+  Site:
+  Role:
+
+
+# TECHNOLOGY COLOPHON
+
+

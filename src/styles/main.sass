@@ -1,0 +1,103 @@
+//Import all SCSS Files
+@import '_sanitize', '_variables', '_mixins', '_grid', '_fonts'
+@import '../modules/*/*'
+
+
+::root
+	background-color: black
+
+
+::-webkit-scrollbar
+	display: none
+
+*, html, body
+	margin: 0
+	padding: 0
+	position: relative
+	//font-family: 'xxx'
+	color: $color-white
+
+html
+	font-size: 100%
+	background-color: $color-black
+	&.noscroll
+		overflow: hidden
+
+
+//demo scroll ==================================================================
+.test
+	margin-top: 50vh
+	margin-bottom: 50vh
+	opacity: 0
+	transition: .5s ease opacity
+	font-size: 100px
+	&.fade
+		opacity: 1
+
+.line
+	position: absolute
+	top: 150vh
+	left: 0
+	width: 100vw
+	height: 1px
+	background: grey
+
+
+//text-styles===================================================================
+.font
+	font-weight: 100 !important
+	-webkit-font-smoothing: antialiased !important
+
+
+.transition__item
+	position: fixed
+	width: 100vw
+	height: 100vh
+	top: 0
+	left: 0
+	background: #222
+	top: -100vh
+	transition: .3s ease all
+	z-index: 9999
+	&.transition
+		top: 0
+
+
+
+.ajax--container
+	transition: .2s ease all
+	opacity: 1
+	&.hidden
+		opacity: 0
+	&.page-transition
+		opacity: 0
+
+
+a
+	cursor: pointer
+	padding-right: 8px
+
+
+
+//Responsive====================================================================
+@media #{$query-wide-screen}
+	html
+		font-size: calc(8px + (20 - 8)*(100vw - 400px)/(1920 - 400))
+
+
+@media #{$query-desktop-break}
+
+
+@media #{$query-tablet-break}
+
+
+@media #{$query-mobile-break}
+
+
+
+//Lower Resolution==============================================================
+@media #{$query-low-res}
+
+
+//Higher Resolution=============================================================
+@media #{$query-high-res}

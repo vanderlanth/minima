@@ -1,0 +1,18 @@
+head:
+  tab: Subpage
+  favicon: others/fav.png
+  content: |
+   Minima
+  keywords: |
+    Minima
+  styles:
+    css: |
+      css/main.css
+  js: |
+    main.js
+
+content:
+  title: Subpage
+  tagline: Gulp Template Builder
+  link: Made with ♥ by vanderlanth
+  url: http://vanderlanth.io

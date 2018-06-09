@@ -1,0 +1,14 @@
+{
+    "extends": "standard",
+    "rules": {
+    	"no-tabs": "off",
+    	"spaced-comment": "off",
+    	"indent": ["error", "tab"],
+    	"no-multiple-empty-lines": "off",
+    	"brace-style": ["error", "stroustrup"],
+    	"eqeqeq": "off",
+    	"space-before-function-paren": "off",
+    	"space-before-blocks": "off",
+    	"keyword-spacing": "off"
+    }
+}

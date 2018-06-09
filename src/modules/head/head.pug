@@ -1,0 +1,11 @@
+mixin head(content)
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name="description" content=content.content)
+		meta(name="keywords" content=content.keywords)
+		link(rel="icon" type="image/png" href=content.favicon)
+		title=content.tab
+		meta(name='viewport' content='width=device-width, initial-scale=1')
+		each link in content.styles
+			link(rel='stylesheet' href=link)

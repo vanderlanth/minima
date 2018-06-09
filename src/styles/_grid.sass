@@ -1,0 +1,105 @@
+//----------------------- MINIMA GRID SYSTEM ----------------------
+//args
+$grid-columns: 12
+$wrapper-width: 100%
+$margin-left-right: 1%
+$margin-top-bottom: 10px
+$padding-left-right: 10px
+$padding-top-bottom: 0
+
+//breakpoints
+$breakpoints-list: 'only screen and (min-width: 10px)', 'only screen and (min-width: 768px)', 'only screen and (min-width: 1024px)', 'only screen and (min-width: 1280px)'
+//
+$breakpoints-name: xs s m l
+
+
+//do not touch
+$column-padding: $padding-top-bottom $padding-left-right
+$width-no-class: 100% - ($margin-left-right * 2)
+
+
+%clearfix
+	*zoom: 1
+	&:before, &:after
+		content: " "
+		display: table
+	&:after
+		clear: both
+
+
+*, *:after, *:before
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+
+img
+	width: auto
+	max-width: 100%
+	height: auto
+
+
+.wrapper
+	width: $wrapper-width
+	position: relative
+	margin: 0 auto
+
+
+.wrapper, .row
+	@extend %clearfix
+
+
+.wrapper, .row
+	*zoom: 1
+
+
+.wrapper:before, .row:before, .wrapper:after, .row:after
+	content: " "
+	display: table
+
+
+.wrapper:after, .row:after
+	clear: both
+
+
+*, *:after, *:before
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+
+.grid
+	width: $width-no-class
+	margin: $margin-top-bottom $margin-left-right
+	float: left
+	&[class*='col-']
+		padding: 0
+		min-height: 1px
+
+
+@mixin generate-columns($sizeName, $breakPointSize)
+	@media #{$breakPointSize}
+		@for $i from 1 through $grid-columns
+			.col-#{$sizeName}-#{$i}
+			width: 100% / $grid-columns * $i - $margin-left-right * 2
+			margin: $margin-top-bottom $margin-left-right
+			display: inline-block
+
+	@for $i from 1 through $grid-columns
+		.off-#{$sizeName}-#{$i}
+			margin-left: 100% / $grid-columns * $i
+			padding: $column-padding
+
+	.hide-#{$sizeName}
+		display: none
+			margin: 0
+			padding: 0
+			width: 0
+			height: 0
+			position: absolute
+			left: 3000vw
+
+
+@for $j from 1 through length($breakpoints-name)
+	@include generate-columns(nth($breakpoints-name, $j), nth($breakpoints-list, $j))
+

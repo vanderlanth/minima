@@ -1,0 +1,24 @@
+include ../modules/**/*.pug
+- var images  = "images/"
+- var videos  = "videos/"
+- var others  = "others/"
+
+doctype html
+html
+	+head(subpage.head)
+	body
+
+		//-page transition overlay
+		.transition__item
+
+		.nav
+			+link('homepage', 'homepage', 'index.html')
+			+link('subpage', 'subpage', 'subpage.html')
+
+		//-ajax structure
+		.ajax--container.hidden
+			.page--container.js-subpage(data-title=subpage.content.title)
+				h1=subpage.content.title
+				+picture('img-test', 'image-placeholder', 'jpg', 'This is an image')
+
+		+js
